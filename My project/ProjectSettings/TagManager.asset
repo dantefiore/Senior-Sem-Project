@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - breakable
+  - Enemy
+  - Collision
+  - npc
+  - DoorEnemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Rooms
+  - Water
+  - UI
+  - Enemy
+  - 
+  - EnemyProjectile
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Magic
+  - Player
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Signs and MailBoxes
+    uniqueID: 3685798693
+    locked: 0
+  - name: Enemy
+    uniqueID: 1634600799
+    locked: 0
+  - name: Breakable
+    uniqueID: 4284520371
+    locked: 0
+  - name: Player
+    uniqueID: 1974232619
+    locked: 0
