@@ -400,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 4
   knockTime: 0.2
-  damage: 1
+  knockTag: Player
 --- !u!61 &1915342877
 BoxCollider2D:
   m_ObjectHideFlags: 0

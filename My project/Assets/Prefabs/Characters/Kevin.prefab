@@ -99,7 +99,7 @@ MonoBehaviour:
   signalEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5197863620305848929}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: RaiseItem
         m_Mode: 1
@@ -357,6 +357,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3754445544694151184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2019994607311578300}
+  - component: {fileID: 6433724307114258599}
+  - component: {fileID: 4062285581310830217}
+  m_Layer: 28
+  m_Name: Health
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2019994607311578300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754445544694151184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5197863620305848934}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &6433724307114258599
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754445544694151184}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02788043, y: -0.3517213}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.2266667, y: 2.2266667}
+    newSize: {x: 3.34, y: 3.34}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.61273, y: 1.0405912}
+  m_EdgeRadius: 0
+--- !u!114 &4062285581310830217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754445544694151184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42f3418fbea1e44698b3c3eeff7f89c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: 53a1796d567cb654499282952cee2155, type: 2}
+  currHealth: 0
+  healthSignal: {fileID: 11400000, guid: c5f7c7425ea9bcd48af4aaf6f2c114ad, type: 2}
 --- !u!1 &5197863619805579295
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.3
-  damage: 1
+  knockTag: 
 --- !u!1 &5197863619880622913
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.3
-  damage: 1
+  knockTag: 
 --- !u!1 &5197863620245371502
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.3
-  damage: 1
+  knockTag: 
 --- !u!1 &5197863620305848933
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +666,6 @@ GameObject:
   - component: {fileID: 5197863620305848928}
   - component: {fileID: 5197863620305848929}
   - component: {fileID: 5197863620305848931}
-  - component: {fileID: 5197863620305848941}
   - component: {fileID: 868981348}
   - component: {fileID: 868981350}
   - component: {fileID: 1209757791}
@@ -622,6 +694,7 @@ Transform:
   - {fileID: 1454691192}
   - {fileID: 83017834}
   - {fileID: 1168527705}
+  - {fileID: 2019994607311578300}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -737,8 +810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 35
   currentState: 0
-  currHealth: {fileID: 11400000, guid: 53a1796d567cb654499282952cee2155, type: 2}
-  playerHealthSignal: {fileID: 11400000, guid: c5f7c7425ea9bcd48af4aaf6f2c114ad, type: 2}
+  heartContainers: {fileID: 11400000, guid: 46feb736b36f18e4184717217b8d5312, type: 2}
   startPos: {fileID: 11400000, guid: ffdc5b79598b22d478e8f536d8a6605c, type: 2}
   playerInv: {fileID: 11400000, guid: 0b146b7805edbcb48bd513e60e789c7a, type: 2}
   recievedItemSprite: {fileID: 83017836}
@@ -751,7 +823,7 @@ MonoBehaviour:
   regColor: {r: 1, g: 1, b: 1, a: 1}
   flashDur: 0.07
   numOfFlash: 4
-  triggerCollider: {fileID: 5197863620305848941}
+  triggerCollider: {fileID: 6433724307114258599}
   mySprite: {fileID: 5197863620305848935}
 --- !u!95 &5197863620305848931
 Animator:
@@ -772,32 +844,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &5197863620305848941
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5197863620305848933}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.02788043, y: -0.3517213}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.2266667, y: 2.2266667}
-    newSize: {x: 3.34, y: 3.34}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.61273, y: 1.0405912}
-  m_EdgeRadius: 0
 --- !u!114 &868981348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,7 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.3
-  damage: 1
+  knockTag: 
 --- !u!1 &6039474835400654926
 GameObject:
   m_ObjectHideFlags: 0

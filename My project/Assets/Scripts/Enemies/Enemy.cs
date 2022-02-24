@@ -64,10 +64,9 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    public void Knock(Rigidbody2D myRigidBody, float knockTime, float damage)
+    public void Knock(Rigidbody2D myRigidBody, float knockTime)
     {
         StartCoroutine(KnockCo(myRigidBody, knockTime));
-        TakeDamage(damage);
     }
 
     private IEnumerator KnockCo(Rigidbody2D myRigidBody, float knockTime)

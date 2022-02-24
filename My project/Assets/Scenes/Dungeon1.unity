@@ -693,9 +693,11 @@ MonoBehaviour:
   playerInRange: 0
   thisDoorType: 1
   open: 0
-  playerInv: {fileID: 11400000, guid: 0b146b7805edbcb48bd513e60e789c7a, type: 2}
+  inv: {fileID: 0}
   doorSprite: {fileID: 151677735}
   physCollider: {fileID: 151677734}
+  playerInv: {fileID: 0}
+  thisItem: {fileID: 0}
 --- !u!61 &170259012
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13038,6 +13040,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 805315439, guid: 0b7082d2a49e0284496c93126430e302, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301097190, guid: 0b7082d2a49e0284496c93126430e302, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6296655476633658097, guid: 0b7082d2a49e0284496c93126430e302, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13122,6 +13132,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6296655476633658101, guid: 0b7082d2a49e0284496c93126430e302, type: 3}
+      propertyPath: invPanel
+      value: 
+      objectReference: {fileID: 1787290303}
     - target: {fileID: 6296655476633658102, guid: 0b7082d2a49e0284496c93126430e302, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -13131,6 +13145,11 @@ PrefabInstance:
 --- !u!1 &1787290302 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3524367796853885495, guid: 0b7082d2a49e0284496c93126430e302, type: 3}
+  m_PrefabInstance: {fileID: 1787290301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1787290303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 805315439, guid: 0b7082d2a49e0284496c93126430e302, type: 3}
   m_PrefabInstance: {fileID: 1787290301}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1915489985
@@ -13861,6 +13880,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 109130234}
     m_Modifications:
+    - target: {fileID: 7221701008630339655, guid: efc39859f1f71dd45b9c442a6355f2aa, type: 3}
+      propertyPath: inv
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b146b7805edbcb48bd513e60e789c7a, type: 2}
+    - target: {fileID: 7221701008630339655, guid: efc39859f1f71dd45b9c442a6355f2aa, type: 3}
+      propertyPath: thisItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c9c35854e0ccc34989d89d0f4f4ab32, type: 2}
+    - target: {fileID: 7221701008630339655, guid: efc39859f1f71dd45b9c442a6355f2aa, type: 3}
+      propertyPath: playerInv
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a1258c5faba5b24fa940f3fa42ad840, type: 2}
     - target: {fileID: 7221701009110658568, guid: efc39859f1f71dd45b9c442a6355f2aa, type: 3}
       propertyPath: m_RootOrder
       value: 0

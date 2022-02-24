@@ -285,7 +285,7 @@ MonoBehaviour:
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}
   dialog: The Fortune Teller's Hut is surrounded by monsters!
-  speed: 8
+  speed: 5
   bounds: {fileID: 6126875072259805152}
   minMoveTime: 1
   maxMoveTime: 3

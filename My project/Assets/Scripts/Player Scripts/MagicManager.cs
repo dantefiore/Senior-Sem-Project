@@ -16,10 +16,10 @@ public class MagicManager : MonoBehaviour
         playerInv.currMagic = playerInv.maxMagic;
     }
 
-    public void IncreaseMagic()
+    public void IncreaseMagic(float amount)
     {
-        magicBar.value += 1;
-        playerInv.currMagic += 1;
+        magicBar.value += amount;
+        playerInv.currMagic += amount;
 
         if (magicBar.value > magicBar.maxValue)
         {

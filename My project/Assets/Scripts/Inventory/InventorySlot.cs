@@ -26,17 +26,11 @@ public class InventorySlot : MonoBehaviour
         }
     }
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    public void Clicked()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (thisItem)
+        {
+            thisManager.SetUpDescAndBtn(thisItem.itemDesc, thisItem.usable, thisItem);
+        }
     }
 }

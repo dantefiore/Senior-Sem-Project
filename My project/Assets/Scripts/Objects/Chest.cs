@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class Chest : Interactable
 {
     public Item contents;
-    public Inventory playerInv;
+    public Inventory inv;
     public bool isOpened;
     public BoolVal storeState;
     public SignalSender raiseItem;
     public GameObject dialogBox;
     public Text dialogText;
     private Animator anim;
+    public PlayerInventory playerInv;
+    public InventoryItem thisItem;
 
     // Start is called before the first frame update
     void Start()
@@ -54,8 +56,21 @@ public class Chest : Interactable
         dialogText.text = contents.itemName;
 
         //add contents to the inventory
-        playerInv.AddItem(contents);
-        playerInv.currItem = contents;
+        inv.AddItem(contents);
+        inv.currItem = contents;
+
+        if (playerInv && thisItem)
+        {
+            if (playerInv.myInv.Contains(thisItem))
+            {
+                thisItem.numHeld += 1;
+            }
+            else
+            {
+                playerInv.myInv.Add(thisItem);
+                thisItem.numHeld += 1;
+            }
+        }
 
         //raise the signal to the player to animate
         raiseItem.Raise();

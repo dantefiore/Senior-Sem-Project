@@ -9,9 +9,11 @@ public class Door : Interactable
     [Header("Door Variables")]
     public DoorType thisDoorType;
     public bool open = false;
-    public Inventory playerInv;
+    public Inventory inv;
     public SpriteRenderer doorSprite;
     public BoxCollider2D physCollider;
+    public PlayerInventory playerInv;
+    public InventoryItem thisItem;
 
     private void Update()
     {
@@ -19,9 +21,10 @@ public class Door : Interactable
         {
             if (playerInRange && thisDoorType == DoorType.key)
             {
-                if (playerInv.numKeys > 0)
-                {
-                    playerInv.numKeys--;
+                if (inv.numKeys > 0 && thisItem.numHeld > 0)
+                { 
+                    inv.numKeys--;
+                    thisItem.DecreaseAmount(1);
                     Open();
                 }
             }

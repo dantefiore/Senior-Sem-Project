@@ -766,13 +766,14 @@ GameObject:
   - component: {fileID: 805315440}
   - component: {fileID: 805315442}
   - component: {fileID: 805315441}
+  - component: {fileID: 346560875}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &805315440
 RectTransform:
   m_ObjectHideFlags: 0
@@ -834,6 +835,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &346560875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805315439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed07da133730fb641bca2fb33c92653f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInv: {fileID: 11400000, guid: 6a1258c5faba5b24fa940f3fa42ad840, type: 2}
+  blankSlot: {fileID: 2324825577897016518, guid: 1868746b74000fd448799081d24fe85f, type: 3}
+  invPanel: {fileID: 1301097189}
+  descText: {fileID: 2000581288}
+  useBtn: {fileID: 1949281802}
+  currItem: {fileID: 0}
 --- !u!1 &986319556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,15 +1395,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: -2
-    m_Right: 0
+    m_Left: 5
+    m_Right: 5
     m_Top: 25
     m_Bottom: 25
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 45, y: 75}
-  m_Spacing: {x: -15, y: 15}
+  m_CellSize: {x: 25, y: 75}
+  m_Spacing: {x: 6, y: 15}
   m_Constraint: 1
   m_ConstraintCount: 4
 --- !u!1 &1357286250
@@ -1716,7 +1735,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1949281805}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 346560875}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: UseBtnPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1981921971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,6 +3163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 6296655475786466064}
+  invPanel: {fileID: 805315439}
 --- !u!1001 &6296655476095338567
 PrefabInstance:
   m_ObjectHideFlags: 0
