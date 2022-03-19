@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //the states the player can be in
- public enum PlayerState { idle, walk, attack, interact, stagger }
+ public enum PlayerState { idle, walk, attack, interact, stagger, ability }
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Character Movement")]
     public float speed; //the speed of the player
-    private Rigidbody2D myRigidBody; //the rigid body object on the player
+    public Rigidbody2D myRigidBody; //the rigid body object on the player
     private Vector3 change; //the change in position for the player
-    private Animator anim; //controls what animations play
+    public Animator anim; //controls what animations play
     public PlayerState currentState;
 
     [Header("Character Other")]
@@ -38,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
     public Collider2D triggerCollider; //the players hurt box
     public SpriteRenderer mySprite; //the characters sprite
 
+    [Header("Ability")]
+    private Vector2 tempMovement = Vector2.down;
+    public Vector2 facingDir = Vector2.down;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        change = Vector3.zero; //sets the change variable to 0
         change.x = Input.GetAxisRaw("Horizontal"); //gets the input fo rthe x direction
         change.y = Input.GetAxisRaw("Vertical"); //gets the input for the y direction
 
@@ -70,12 +73,7 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(AttackCo()); //starts the attack function
         }
-        else if (Input.GetButtonDown("second attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
-        {
-            if(playerInv.checkForItem(waterMagic)) //if the player has this ability
-                StartCoroutine(SecondAttackCo());   //starts the second attack function
-        }
-        else if(currentState == PlayerState.walk || currentState == PlayerState.idle)
+        else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
         {
             UpdateAnimAndMove(); //changes the characters animations
         }
@@ -180,6 +178,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("moveX", change.x); 
             anim.SetFloat("moveY", change.y);
             anim.SetBool("moving", true);
+            facingDir = change;
         }
         else
         {
@@ -214,6 +213,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             this.gameObject.SetActive(false);
+
         }*/
     }
 
@@ -240,7 +240,8 @@ public class PlayerMovement : MonoBehaviour
         triggerCollider.enabled = false;
 
         //plays the flashing animations
-        for (int i = 0; i < numOfFlash; i++){
+        for (int i = 0; i < numOfFlash; i++)
+        {
             mySprite.color = flashColor;
             yield return new WaitForSeconds(flashDur);
             mySprite.color = regColor;

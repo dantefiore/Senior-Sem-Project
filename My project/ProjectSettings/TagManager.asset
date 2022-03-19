@@ -9,6 +9,9 @@ TagManager:
   - Collision
   - npc
   - DoorEnemy
+  - FortuneTellerGoblin
+  - Magic
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,7 @@ public class InventoryItem : ScriptableObject
     public int numHeld;
     public bool usable;
     public bool unique;
+    public bool ability;
     public UnityEvent evt;
 
     public void Use()

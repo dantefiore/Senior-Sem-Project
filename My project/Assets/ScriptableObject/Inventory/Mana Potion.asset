@@ -16,8 +16,8 @@ MonoBehaviour:
   itemDesc: Basic but Trusty Wind Spell
   itemImg: {fileID: 0}
   numHeld: 0
-  usable: 0
-  unique: 1
+  usable: 1
+  unique: 0
   evt:
     m_PersistentCalls:
       m_Calls:

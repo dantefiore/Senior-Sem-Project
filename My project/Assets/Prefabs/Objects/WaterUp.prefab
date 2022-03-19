@@ -12,8 +12,15 @@ GameObject:
   - component: {fileID: 93619448488186134}
   - component: {fileID: 6381350495878000268}
   - component: {fileID: 8153838617614630350}
-  - component: {fileID: -6294387614738678328}
   - component: {fileID: 7921081850608433982}
+  - component: {fileID: -6294387614738678328}
+  - component: {fileID: 6741662660305880671}
+  - component: {fileID: 7649099892132568665}
+  - component: {fileID: -8047750140895055125}
+  - component: {fileID: 2877506105478510760}
+  - component: {fileID: 2413828652712759448}
+  - component: {fileID: 4517499706181016874}
+  - component: {fileID: 8491435939538673820}
   m_Layer: 27
   m_Name: WaterUp
   m_TagString: Untagged
@@ -106,7 +113,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!61 &8153838617614630350
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133,21 +140,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2554121, y: 1.302207}
   m_EdgeRadius: 0
---- !u!114 &-6294387614738678328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3198731557464609050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 2
-  knockTime: 0.3
-  damage: 1
 --- !u!114 &7921081850608433982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,3 +155,118 @@ MonoBehaviour:
   speed: 8
   myRigidBody: {fileID: 6381350495878000268}
   lifeTime: 1
+--- !u!114 &-6294387614738678328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198731557464609050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: Enemy
+--- !u!114 &6741662660305880671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198731557464609050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: DoorEnemy
+--- !u!114 &7649099892132568665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198731557464609050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2154d02a9a91b994389fdaf1ad316488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRigidBody: {fileID: 6381350495878000268}
+  speed: 8
+--- !u!114 &-8047750140895055125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198731557464609050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bd9d3aa1db303478b381f661598333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tag: Enemy
+  dmg: 1
+--- !u!114 &2877506105478510760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198731557464609050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bd9d3aa1db303478b381f661598333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tag: DoorEnemy
+  dmg: 1
+--- !u!114 &2413828652712759448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198731557464609050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bd9d3aa1db303478b381f661598333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tag: FortuneTellerGoblin
+  dmg: 1
+--- !u!114 &4517499706181016874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198731557464609050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: FortuneTellerGoblin
+--- !u!114 &8491435939538673820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198731557464609050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bd9d3aa1db303478b381f661598333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tag: Boss
+  dmg: 1

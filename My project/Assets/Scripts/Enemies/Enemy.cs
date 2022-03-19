@@ -15,8 +15,8 @@ public abstract class Enemy : MonoBehaviour
     public GameObject deathEffect;
     public Vector2 homePos;
     public LootTable thisLoot;
-
     public SignalSender deathSignal;
+    [SerializeField] private GenericHealth healthScript;
 
     private void Awake()
     {
@@ -29,16 +29,17 @@ public abstract class Enemy : MonoBehaviour
         transform.position = homePos;
     }
 
-    private void TakeDamage(float dmg)
+    public virtual void TakeDamage(float dmg)
     {
         health -= dmg;
 
-        if(health <= 0)
+        if(healthScript.currHealth <= 0)
         {
             DeathEffect();
             makeLoot();
             deathSignal.Raise();
             this.gameObject.SetActive(false);
+
         }
     }
 
@@ -69,7 +70,7 @@ public abstract class Enemy : MonoBehaviour
         StartCoroutine(KnockCo(myRigidBody, knockTime));
     }
 
-    private IEnumerator KnockCo(Rigidbody2D myRigidBody, float knockTime)
+    public virtual IEnumerator KnockCo(Rigidbody2D myRigidBody, float knockTime)
     {
         if (myRigidBody != null)
         {

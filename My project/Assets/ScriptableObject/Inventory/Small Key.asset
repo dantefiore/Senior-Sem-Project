@@ -18,6 +18,7 @@ MonoBehaviour:
   numHeld: 0
   usable: 0
   unique: 0
+  ability: 0
   evt:
     m_PersistentCalls:
       m_Calls: []

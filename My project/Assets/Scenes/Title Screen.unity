@@ -1110,6 +1110,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1124924044}
     m_Modifications:
+    - target: {fileID: 7461100216197843423, guid: 3ff40a4559a9a0b4ba19ff7d2aa9ddaf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.000061035
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461100216197843423, guid: 3ff40a4559a9a0b4ba19ff7d2aa9ddaf, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.000038147
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461100216197843423, guid: 3ff40a4559a9a0b4ba19ff7d2aa9ddaf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461100216197843423, guid: 3ff40a4559a9a0b4ba19ff7d2aa9ddaf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000019073486
+      objectReference: {fileID: 0}
     - target: {fileID: 7461100216412996208, guid: 3ff40a4559a9a0b4ba19ff7d2aa9ddaf, type: 3}
       propertyPath: m_Name
       value: NewGame
@@ -1289,7 +1305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9129457235132928876, guid: 53145457b7dd4b342a01068659c0a0a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -323.78772
+      value: -319.04187
       objectReference: {fileID: 0}
     - target: {fileID: 9129457235132928876, guid: 53145457b7dd4b342a01068659c0a0a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -16,8 +16,21 @@ MonoBehaviour:
   itemDesc: Shoots an Arrow Made of Water
   itemImg: {fileID: 21300000, guid: bb4a0d07347682749aa1731194e260cc, type: 3}
   numHeld: 0
-  usable: 0
+  usable: 1
   unique: 1
+  ability: 1
   evt:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6942748873548094255, guid: 9a3d03080a4cb3841a685bc2d1f3f6f6, type: 3}
+        m_TargetAssemblyTypeName: AbilityReaction, Assembly-CSharp
+        m_MethodName: SetAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

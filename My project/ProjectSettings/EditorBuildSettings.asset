@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon1.unity
     guid: d0c4f13e34f29894d8694b064724b842
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: bdcb1e352d941a64697ac5e74a545a16
+  - enabled: 1
+    path: Assets/Scenes/Woods.unity
+    guid: be5b8c2fdc356c249bc2894764563df1
   m_configObjects: {}

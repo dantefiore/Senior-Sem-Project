@@ -244,6 +244,8 @@ GameObject:
   - component: {fileID: 6649373713446628015}
   - component: {fileID: 1915342877}
   - component: {fileID: 1915342875}
+  - component: {fileID: -6471505277501995823}
+  - component: {fileID: 1768982230406918452}
   m_Layer: 6
   m_Name: Goblin
   m_TagString: Enemy
@@ -398,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 4
+  thrust: 2
   knockTime: 0.2
   knockTag: Player
 --- !u!61 &1915342877
@@ -449,8 +451,38 @@ MonoBehaviour:
   homePos: {x: 0, y: 0}
   thisLoot: {fileID: 11400000, guid: a0f39e9aa8f8feb429e236854997a6a5, type: 2}
   deathSignal: {fileID: 11400000, guid: a1a02ec7bb43dac43b3e2afc2ffde8db, type: 2}
+  healthScript: {fileID: -6471505277501995823}
   myRigidBody: {fileID: 6649373713446628018}
   target: {fileID: 0}
   chaseRadius: 4
   attackRadius: 1
   anim: {fileID: 6649373713446628022}
+--- !u!114 &-6471505277501995823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6649373713446628023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c1cb3fcc34dd754cbb2095477ca8f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: 73464c8cb6d38ea40a3cb54d24ff3a1e, type: 2}
+  currHealth: 2
+  death_count: {fileID: 11400000, guid: 152bd54895ed35a4ebf6f9e9bde70c9b, type: 2}
+--- !u!114 &1768982230406918452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6649373713446628023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: Player

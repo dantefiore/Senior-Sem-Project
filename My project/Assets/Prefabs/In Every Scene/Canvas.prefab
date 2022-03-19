@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 824708344}
   - component: {fileID: 824708345}
-  - component: {fileID: 824708346}
   - component: {fileID: 824708347}
   - component: {fileID: 727605283}
+  - component: {fileID: 2498792688686429825}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -93,20 +93,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &824708346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824708343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20eb5b19ddbddd44788b638c54a4528e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magicBar: {fileID: 824708345}
-  playerInv: {fileID: 11400000, guid: 0b146b7805edbcb48bd513e60e789c7a, type: 2}
 --- !u!114 &824708347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +109,7 @@ MonoBehaviour:
   signalEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 824708346}
+      - m_Target: {fileID: 2498792688686429825}
         m_TargetAssemblyTypeName: MagicManager, Assembly-CSharp
         m_MethodName: IncreaseMagic
         m_Mode: 4
@@ -151,7 +137,7 @@ MonoBehaviour:
   signalEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 824708346}
+      - m_Target: {fileID: 2498792688686429825}
         m_TargetAssemblyTypeName: MagicManager, Assembly-CSharp
         m_MethodName: DecreaseMagic
         m_Mode: 4
@@ -163,6 +149,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2498792688686429825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824708343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20eb5b19ddbddd44788b638c54a4528e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicBar: {fileID: 824708345}
+  playerInv: {fileID: 11400000, guid: 0b146b7805edbcb48bd513e60e789c7a, type: 2}
 --- !u!1 &1508703716
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,8 +418,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.358, y: -2.1194}
-  m_SizeDelta: {x: 737.8767, y: 99.2322}
+  m_AnchoredPosition: {x: 2.0403, y: -2.1194}
+  m_SizeDelta: {x: 729.2415, y: 99.2322}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3422544940915306557
 CanvasRenderer:
@@ -453,7 +453,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
@@ -1096,10 +1096,10 @@ RectTransform:
   m_Father: {fileID: 3422544941022613153}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.00000377, y: 70.8}
-  m_SizeDelta: {x: 776.8163, y: 133.818}
+  m_AnchorMin: {x: 0.015000001, y: 0}
+  m_AnchorMax: {x: 0.98375005, y: 0.22333404}
+  m_AnchoredPosition: {x: 0.5, y: 3.7999878}
+  m_SizeDelta: {x: 1.8162842, y: -0.18200684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3422544942596399811
 CanvasRenderer:

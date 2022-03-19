@@ -6,17 +6,23 @@ public class DungeonEnemyRoom : DungeonRoom
 {
     public Door[] doors;
     public Vector2 newPlayerPos;
-    public int enemyCount;
+    public float enemyCount;
+    [SerializeField] public FloatValue death_count;
 
     private void Start()
     {
-        enemyCount = enemies.Length;
+        //enemyCount = enemies.Length;
         OpenDoors();
     }
 
-    public void CheckEnemies()
+    private void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("DoorEnemy").Length <= 1)
+            CheckEnemies();
+    }
+
+    private void CheckEnemies()
+    {
+        if (death_count.RuntimeValue >= enemyCount)
         {
             OpenDoors();
         }
@@ -29,18 +35,14 @@ public class DungeonEnemyRoom : DungeonRoom
             other.transform.position = newPlayerPos;
             virtualCam.SetActive(true);
 
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                ChangeActivation(enemies[i], true);
-                enemies[i].currState = EnemyState.idle;
-                enemies[i].health = enemies[i].maxHealth.initialVal;
-            }
+            StartCoroutine(WaitCo());
 
             for (int i = 0; i < pots.Length; i++)
             {
                 ChangeActivation(pots[i], true);
             }
 
+            death_count.RuntimeValue = 0;
             CloseDoors();
         }
     }
@@ -77,5 +79,18 @@ public class DungeonEnemyRoom : DungeonRoom
         {
             doors[i].Open();
         }
+    }
+
+    private IEnumerator WaitCo()
+    {
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            yield return new WaitForSeconds(2);
+
+            ChangeActivation(enemies[i], true);
+            enemies[i].currState = EnemyState.idle;
+            enemies[i].health = enemies[i].maxHealth.initialVal;
+        }
+
     }
 }

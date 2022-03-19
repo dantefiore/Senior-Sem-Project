@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Chest A
   m_EditorClassIdentifier: 
   initialVal: 0
-  RuntimeValue: 0
+  RuntimeValue: 1

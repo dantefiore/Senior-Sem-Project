@@ -37,6 +37,8 @@ public class GameSaveManager : MonoBehaviour
     public void ClearSpells()
     {
         inv.items.Clear();
+        inv.numKeys = 0;
+        inv.coins = 0;
     }
 
     public void FillMagic()

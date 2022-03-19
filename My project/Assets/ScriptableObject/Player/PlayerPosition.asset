@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce71152b545efff4a93fbb4b3904483f, type: 3}
   m_Name: PlayerPosition
   m_EditorClassIdentifier: 
-  initialVal: {x: -8, y: -13}
-  defaultVal: {x: -8, y: -13}
+  initialVal: {x: 1, y: -1}
+  defaultVal: {x: 1, y: -1}

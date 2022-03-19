@@ -6,12 +6,23 @@ public class GenericHealth : MonoBehaviour
     //in the inspector but not to other classes
     public FloatValue maxHealth;
     public float currHealth;
+    [SerializeField] private FloatValue death_count;
 
-
+    
+            
     // Start is called before the first frame update
     void Start()
     {
         currHealth = maxHealth.RuntimeValue;
+    }
+
+    public virtual void Update()
+    {
+        if(currHealth <= 0)
+        {
+            death_count.RuntimeValue += 1;
+            this.gameObject.SetActive(false);
+        }
     }
 
     public virtual void Heal(float amount)

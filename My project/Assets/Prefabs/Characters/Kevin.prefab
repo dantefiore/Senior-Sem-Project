@@ -111,6 +111,55 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &111269247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 111269249}
+  - component: {fileID: 111269248}
+  m_Layer: 28
+  m_Name: Ability
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &111269249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111269247}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5197863620305848934}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &111269248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111269247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b297ac55381c640905d5fcd8bd26c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityNum: {fileID: 11400000, guid: 0e2875779f3eb9c4e84ebce9eaa34fe4, type: 2}
+  currAbility: {fileID: 0}
+  player: {fileID: 5197863620305848929}
+  dash: {fileID: 11400000, guid: 87ad831dac4230a48bb5b3e0f59b499d, type: 2}
+  arrow: {fileID: 11400000, guid: 951b354ae65e55848a0bebc053fccb25, type: 2}
+  ice: {fileID: 11400000, guid: abf142c1c47941044bcdf6f728a111b9, type: 2}
 --- !u!1 &1454691191
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,9 +490,14 @@ GameObject:
   - component: {fileID: 5197863619805579294}
   - component: {fileID: 5197863619805579289}
   - component: {fileID: 5197863619805579288}
+  - component: {fileID: 1870003605781553329}
+  - component: {fileID: 6232250681914377844}
+  - component: {fileID: 7994590554069716669}
+  - component: {fileID: 1943510647}
+  - component: {fileID: 1943510648}
   m_Layer: 28
   m_Name: Up Hit Box
-  m_TagString: Player
+  m_TagString: Magic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,9 +555,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 3
+  thrust: 2
   knockTime: 0.3
-  knockTag: 
+  knockTag: Enemy
+--- !u!114 &1870003605781553329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619805579295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: DoorEnemy
+--- !u!114 &6232250681914377844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619805579295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: Enemy
+--- !u!114 &7994590554069716669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619805579295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: DoorEnemy
+--- !u!114 &1943510647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619805579295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: FortuneTellerGoblin
+--- !u!114 &1943510648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619805579295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: FortuneTellerGoblin
 --- !u!1 &5197863619880622913
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,9 +641,14 @@ GameObject:
   - component: {fileID: 5197863619880622912}
   - component: {fileID: 5197863619880622915}
   - component: {fileID: 5197863619880622914}
+  - component: {fileID: 6959373257767765245}
+  - component: {fileID: 1168387477111550985}
+  - component: {fileID: 7828240664085314439}
+  - component: {fileID: 2112104929}
+  - component: {fileID: 2112104930}
   m_Layer: 28
   m_Name: Left Hit Box
-  m_TagString: Player
+  m_TagString: Magic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -575,9 +706,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 3
+  thrust: 2
   knockTime: 0.3
-  knockTag: 
+  knockTag: Enemy
+--- !u!114 &6959373257767765245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619880622913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: DoorEnemy
+--- !u!114 &1168387477111550985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619880622913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: Enemy
+--- !u!114 &7828240664085314439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619880622913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: DoorEnemy
+--- !u!114 &2112104929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619880622913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: FortuneTellerGoblin
+--- !u!114 &2112104930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619880622913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: FortuneTellerGoblin
 --- !u!1 &5197863620245371502
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,9 +792,14 @@ GameObject:
   - component: {fileID: 5197863620245371497}
   - component: {fileID: 5197863620245371496}
   - component: {fileID: 5197863620245371499}
+  - component: {fileID: 7962329617062257643}
+  - component: {fileID: 6380309082703851212}
+  - component: {fileID: 4572790372685306609}
+  - component: {fileID: 1490792787}
+  - component: {fileID: 1490792788}
   m_Layer: 28
   m_Name: Down Hit Box
-  m_TagString: Player
+  m_TagString: Magic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -649,9 +857,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 3
+  thrust: 2
   knockTime: 0.3
-  knockTag: 
+  knockTag: Enemy
+--- !u!114 &7962329617062257643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620245371502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: DoorEnemy
+--- !u!114 &6380309082703851212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620245371502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: Enemy
+--- !u!114 &4572790372685306609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620245371502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: DoorEnemy
+--- !u!114 &1490792787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620245371502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: FortuneTellerGoblin
+--- !u!114 &1490792788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620245371502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: FortuneTellerGoblin
 --- !u!1 &5197863620305848933
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +949,7 @@ GameObject:
   - component: {fileID: 868981348}
   - component: {fileID: 868981350}
   - component: {fileID: 1209757791}
+  - component: {fileID: 971178376}
   m_Layer: 28
   m_Name: Kevin
   m_TagString: Player
@@ -695,6 +976,7 @@ Transform:
   - {fileID: 83017834}
   - {fileID: 1168527705}
   - {fileID: 2019994607311578300}
+  - {fileID: 111269249}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -809,6 +1091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 35
+  myRigidBody: {fileID: 0}
+  anim: {fileID: 0}
   currentState: 0
   heartContainers: {fileID: 11400000, guid: 46feb736b36f18e4184717217b8d5312, type: 2}
   startPos: {fileID: 11400000, guid: ffdc5b79598b22d478e8f536d8a6605c, type: 2}
@@ -825,6 +1109,7 @@ MonoBehaviour:
   numOfFlash: 4
   triggerCollider: {fileID: 6433724307114258599}
   mySprite: {fileID: 5197863620305848935}
+  facingDir: {x: 0, y: -1}
 --- !u!95 &5197863620305848931
 Animator:
   serializedVersion: 3
@@ -935,6 +1220,34 @@ MonoBehaviour:
   m_UseImpactDirection: 0
   m_ScaleImpactWithMass: 0
   m_ScaleImpactWithSpeed: 0
+--- !u!114 &971178376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620305848933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1580cff679c0547a6fa954bc94e52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signalE: {fileID: 11400000, guid: 99caed0ff3ab26343b5d904cb6a13476, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5197863620305848929}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: RaiseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5197863620650198643
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,9 +1259,14 @@ GameObject:
   - component: {fileID: 5197863620650198642}
   - component: {fileID: 5197863620650198653}
   - component: {fileID: 5197863620650198652}
+  - component: {fileID: 7950692490928850857}
+  - component: {fileID: 662529045611066491}
+  - component: {fileID: 264489078610721307}
+  - component: {fileID: 917545938}
+  - component: {fileID: 917545939}
   m_Layer: 28
   m_Name: Right Hit Box
-  m_TagString: Player
+  m_TagString: Magic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1006,9 +1324,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 3
+  thrust: 2
   knockTime: 0.3
-  knockTag: 
+  knockTag: Enemy
+--- !u!114 &7950692490928850857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620650198643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: DoorEnemy
+--- !u!114 &662529045611066491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620650198643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: Enemy
+--- !u!114 &264489078610721307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620650198643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: DoorEnemy
+--- !u!114 &917545938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620650198643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: FortuneTellerGoblin
+--- !u!114 &917545939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620650198643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: FortuneTellerGoblin
 --- !u!1 &6039474835400654926
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 7005448716414334615}
   - component: {fileID: 7005448716414334616}
   - component: {fileID: 7005448716414334617}
+  - component: {fileID: 4867991788767037675}
+  - component: {fileID: -8914402878860678352}
   m_Layer: 6
   m_Name: RestrictedEnemy
   m_TagString: Enemy
@@ -192,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 4
+  thrust: 2
   knockTime: 0.2
   knockTag: Player
 --- !u!114 &7005448716414334617
@@ -217,9 +219,39 @@ MonoBehaviour:
   homePos: {x: 54, y: 2}
   thisLoot: {fileID: 0}
   deathSignal: {fileID: 11400000, guid: a1a02ec7bb43dac43b3e2afc2ffde8db, type: 2}
+  healthScript: {fileID: 4867991788767037675}
   myRigidBody: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 6
   attackRadius: 1
   anim: {fileID: 0}
   boundry: {fileID: 0}
+--- !u!114 &4867991788767037675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7005448716414334619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c1cb3fcc34dd754cbb2095477ca8f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: 73464c8cb6d38ea40a3cb54d24ff3a1e, type: 2}
+  currHealth: 0
+  death_count: {fileID: 11400000, guid: 152bd54895ed35a4ebf6f9e9bde70c9b, type: 2}
+--- !u!114 &-8914402878860678352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7005448716414334619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: Player

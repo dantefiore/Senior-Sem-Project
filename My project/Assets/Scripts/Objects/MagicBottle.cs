@@ -11,7 +11,6 @@ public class MagicBottle : PowerUp
         if (other.gameObject.CompareTag("Player"))
         {
             playerInv.currMagic += 1;
-            powerUpSignal.Raise();
             Destroy(this.gameObject);
         }
     }

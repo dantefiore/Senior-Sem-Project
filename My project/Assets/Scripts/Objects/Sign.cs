@@ -9,12 +9,6 @@ public class Sign : Interactable
     public Text dialogText;
     public string dialog;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     public virtual void Update()
     {

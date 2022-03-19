@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6941195147627460189}
   - component: {fileID: 6233507009583009788}
   - component: {fileID: 265446390940785952}
+  - component: {fileID: 1423297788375964972}
+  - component: {fileID: 6498933888365436502}
   m_Layer: 8
   m_Name: Spear
   m_TagString: Untagged
@@ -167,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 1
   knockTime: 0.3
-  damage: 1
+  knockTag: Player
 --- !u!114 &265446390940785952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,5 +184,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   direction: {x: 0, y: 0}
-  lifeTime: 2
   myRigidBody: {fileID: 3360054160085683875}
+--- !u!114 &1423297788375964972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7705571760168976934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bd9d3aa1db303478b381f661598333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tag: Player
+  dmg: 1
+--- !u!114 &6498933888365436502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7705571760168976934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce1faa9aa1e6054dbc6d3a7df21204a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0.7

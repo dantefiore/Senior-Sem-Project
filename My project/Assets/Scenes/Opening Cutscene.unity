@@ -1156,17 +1156,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e99eb206c608f4a4d8b4c35c65334955, type: 3}
---- !u!114 &119437685 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 824708346, guid: e99eb206c608f4a4d8b4c35c65334955, type: 3}
-  m_PrefabInstance: {fileID: 119437684}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20eb5b19ddbddd44788b638c54a4528e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &916057899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,6 +2256,83 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &939347714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939347717}
+  - component: {fileID: 939347716}
+  - component: {fileID: 939347715}
+  m_Layer: 0
+  m_Name: Game Save Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &939347715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939347714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e67a0b6a30cf5b448372eec9b5e86a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInv: {fileID: 11400000, guid: 6a1258c5faba5b24fa940f3fa42ad840, type: 2}
+--- !u!114 &939347716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939347714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6742e99654af2664baa5b4f6bf95102f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 11400000, guid: 6721dbb5864e8d7418d2867ccb1bcbb8, type: 2}
+  - {fileID: 11400000, guid: 46feb736b36f18e4184717217b8d5312, type: 2}
+  - {fileID: 11400000, guid: 0b146b7805edbcb48bd513e60e789c7a, type: 2}
+  - {fileID: 11400000, guid: 1b5ff64978d69464b80e1e169139cfb5, type: 2}
+  - {fileID: 11400000, guid: dda1d7bdb4d7a224a997a250eb004633, type: 2}
+  - {fileID: 11400000, guid: 0e2875779f3eb9c4e84ebce9eaa34fe4, type: 2}
+  - {fileID: 11400000, guid: 53a1796d567cb654499282952cee2155, type: 2}
+  - {fileID: 11400000, guid: 984a778c64ab07e48b35bf2781b293c7, type: 2}
+  PlayerHealth: {fileID: 11400000, guid: 53a1796d567cb654499282952cee2155, type: 2}
+  inv: {fileID: 11400000, guid: 0b146b7805edbcb48bd513e60e789c7a, type: 2}
+  chests:
+  - {fileID: 11400000, guid: 6721dbb5864e8d7418d2867ccb1bcbb8, type: 2}
+  - {fileID: 11400000, guid: 1b5ff64978d69464b80e1e169139cfb5, type: 2}
+  - {fileID: 11400000, guid: dda1d7bdb4d7a224a997a250eb004633, type: 2}
+  - {fileID: 11400000, guid: 984a778c64ab07e48b35bf2781b293c7, type: 2}
+  - {fileID: 11400000, guid: 8f1d396d4c4121d408b7f936a2f8f2d1, type: 2}
+  - {fileID: 11400000, guid: 6b8706fd8aef6364eb829b739d2687c2, type: 2}
+  - {fileID: 11400000, guid: 6b76853d0a8edbc4087447fa1376397f, type: 2}
+  - {fileID: 11400000, guid: f56f3ebe280eeb84c98035eba11614d6, type: 2}
+--- !u!4 &939347717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939347714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.9059815, y: -13.928823, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959893308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,7 +4325,7 @@ PrefabInstance:
     - target: {fileID: 5197863620305848929, guid: 88f58e11c1f21474cab59d77b8ec053c, type: 3}
       propertyPath: magic
       value: 
-      objectReference: {fileID: 119437685}
+      objectReference: {fileID: 0}
     - target: {fileID: 5197863620305848929, guid: 88f58e11c1f21474cab59d77b8ec053c, type: 3}
       propertyPath: startPos
       value: 

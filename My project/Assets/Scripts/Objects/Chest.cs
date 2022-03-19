@@ -74,7 +74,7 @@ public class Chest : Interactable
 
         //raise the signal to the player to animate
         raiseItem.Raise();
-
+        
         //raise the context clue
         context.Raise();
 
