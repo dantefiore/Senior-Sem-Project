@@ -29651,7 +29651,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3977879822975500181, guid: 3812a3357fc8baa48a6ccb5d5a7ee41c, type: 3}
   m_PrefabInstance: {fileID: 305945542}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1161448304}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5504882f30045db479fb80e346698ce7, type: 3}
@@ -30161,6 +30161,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6735601424283753880, guid: 07ab263dd6eba4a4ba05339f837d0dc8, type: 3}
   m_PrefabInstance: {fileID: 6735601425690965354}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1161448304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3977879822975500137, guid: 3812a3357fc8baa48a6ccb5d5a7ee41c, type: 3}
+  m_PrefabInstance: {fileID: 305945542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1161448308
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161448304}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.045930147, y: -0.03330493}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7863002, y: 0.84098196}
+  m_EdgeRadius: 0
 --- !u!1 &1172531332
 GameObject:
   m_ObjectHideFlags: 0
@@ -30995,6 +31026,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3422544942596399808, guid: e99eb206c608f4a4d8b4c35c65334955, type: 3}
   m_PrefabInstance: {fileID: 3422544941063749276}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1699711239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5197863620245371502, guid: 88f58e11c1f21474cab59d77b8ec053c, type: 3}
+  m_PrefabInstance: {fileID: 5197863619065651397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1699711250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699711239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: breakable
 --- !u!1 &1715143677
 GameObject:
   m_ObjectHideFlags: 0

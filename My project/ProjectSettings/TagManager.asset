@@ -12,6 +12,7 @@ TagManager:
   - FortuneTellerGoblin
   - Magic
   - Boss
+  - Room
   layers:
   - Default
   - TransparentFX

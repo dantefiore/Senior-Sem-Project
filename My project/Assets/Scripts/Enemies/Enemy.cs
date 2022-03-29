@@ -16,7 +16,7 @@ public abstract class Enemy : MonoBehaviour
     public Vector2 homePos;
     public LootTable thisLoot;
     public SignalSender deathSignal;
-    [SerializeField] private GenericHealth healthScript;
+    public GenericHealth healthScript;
 
     private void Awake()
     {
@@ -43,7 +43,7 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    private void DeathEffect()
+    public void DeathEffect()
     {
         if(deathEffect != null)
         {
@@ -52,7 +52,7 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    private void makeLoot()
+    public void makeLoot()
     {
         if (thisLoot != null)
         {

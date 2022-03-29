@@ -8,7 +8,20 @@ public class BossRoom : DungeonRoom
     public Vector2 newPlayerPos;
     public float enemyCount;
     public FloatValue death_count;
+    private Animator anim;
     [SerializeField] private GameObject reward;
+    [SerializeField] private GameObject teleporter;
+
+    [Header("For New Heart Pos")]
+    [SerializeField] private float hc_x;
+    [SerializeField] private float hc_y;
+
+    [Header("Teleporter Pos")]
+    [SerializeField] private float tp_x;
+    [SerializeField] private float tp_y;
+
+    [Header("Story Bools")]
+    [SerializeField] private BoolVal storyBool;
 
     private void Start()
     {
@@ -16,6 +29,8 @@ public class BossRoom : DungeonRoom
         {
             enemies[i].gameObject.SetActive(false);
         }
+
+        anim = teleporter.GetComponent<Animator>();
 
         OpenDoors();
     }
@@ -29,12 +44,12 @@ public class BossRoom : DungeonRoom
     {
         if (death_count.RuntimeValue >= enemyCount)
         {
-            reward.transform.position = new Vector3(0f, 60f, 0f);
+            reward.transform.position = new Vector3(hc_x, hc_y, 0f);
+            teleporter.transform.position = new Vector3(tp_x, tp_y, 0f);
+            anim.SetBool("active", true);
+            //Debug.Log("Enemies Defeated");
+            storyBool.RuntimeValue = true;
             OpenDoors();
-        }
-        else
-        {
-            reward.transform.position = new Vector3(-30f, 60f, 0f);
         }
     }
 
@@ -52,7 +67,7 @@ public class BossRoom : DungeonRoom
                 ChangeActivation(pots[i], true);
             }
 
-            death_count.RuntimeValue = 0;
+            death_count.RuntimeValue = death_count.initialVal;
             CloseDoors();
         }
     }

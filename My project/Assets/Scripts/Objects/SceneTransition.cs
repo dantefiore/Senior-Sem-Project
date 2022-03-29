@@ -39,7 +39,7 @@ public class SceneTransition : MonoBehaviour
     {
         if(fadeOutPanel != null)
         {
-        Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);
+            Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);
         }
 
         //yield return new WaitForSeconds(fadeWait);

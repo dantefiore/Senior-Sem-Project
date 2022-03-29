@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 [CreateAssetMenu(menuName = "ScriptableObject/Ability/Dash Ability", fileName = "Dash Ability")]
 public class DashAbility : GenericAbility

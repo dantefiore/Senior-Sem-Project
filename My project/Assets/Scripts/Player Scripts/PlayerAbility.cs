@@ -7,6 +7,8 @@ public class PlayerAbility : MonoBehaviour
     public FloatValue abilityNum;
     public GenericAbility currAbility;
     public PlayerMovement player;
+    public float start_cooldown;
+    public float cooldown;
 
     public GenericAbility dash;
     public GenericAbility arrow;
@@ -14,6 +16,8 @@ public class PlayerAbility : MonoBehaviour
 
     void Update()
     {
+        cooldown--;
+
         if (Input.GetButtonDown("ability") && player.currentState != PlayerState.attack && player.currentState != PlayerState.stagger)
         {
             if (abilityNum.RuntimeValue == 0)
@@ -33,7 +37,12 @@ public class PlayerAbility : MonoBehaviour
                 currAbility = ice;
             }
 
-            if (currAbility != null)
+            if (currAbility == dash && cooldown <= 0)
+            {
+                StartCoroutine(AbilityCo(currAbility.duration));
+                cooldown = start_cooldown;
+            }
+            else if(currAbility != null && currAbility != dash)
             {
                 StartCoroutine(AbilityCo(currAbility.duration));
             }

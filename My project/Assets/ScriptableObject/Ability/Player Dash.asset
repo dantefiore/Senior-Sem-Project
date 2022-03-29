@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6994f824943f64fbb2f03434d48121, type: 3}
   m_Name: Player Dash
   m_EditorClassIdentifier: 
-  magicCost: 2
+  magicCost: 0
   duration: 0.3
   playerMagic: {fileID: 11400000, guid: 0b146b7805edbcb48bd513e60e789c7a, type: 2}
-  dashForce: 3
+  dashForce: 6

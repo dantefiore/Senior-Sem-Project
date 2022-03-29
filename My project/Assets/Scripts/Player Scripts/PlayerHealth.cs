@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : GenericHealth
 {
     [SerializeField] private SignalSender healthSignal;
+    [SerializeField] private FloatValue currScene;
 
     private void Start()
     {
@@ -21,8 +22,9 @@ public class PlayerHealth : GenericHealth
 
     private void Update()
     {
-        if(currHealth <= 0)
+        if(maxHealth.RuntimeValue <= 0)
         {
+            currScene.RuntimeValue = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene("Game Over");
         }
     }

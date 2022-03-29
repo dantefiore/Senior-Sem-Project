@@ -6,10 +6,8 @@ public class GenericHealth : MonoBehaviour
     //in the inspector but not to other classes
     public FloatValue maxHealth;
     public float currHealth;
-    [SerializeField] private FloatValue death_count;
+    public FloatValue death_count;
 
-    
-            
     // Start is called before the first frame update
     void Start()
     {

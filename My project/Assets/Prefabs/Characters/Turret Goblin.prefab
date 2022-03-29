@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 2026967169083000960}
   - component: {fileID: 2026967169083000991}
   - component: {fileID: 2026967169083000961}
-  - component: {fileID: -6261991517059063911}
   - component: {fileID: -8148958535170726698}
+  - component: {fileID: 4470094090446161623}
   m_Layer: 6
   m_Name: Turret Goblin
   m_TagString: Enemy
@@ -219,7 +219,7 @@ MonoBehaviour:
   homePos: {x: 0, y: 0}
   thisLoot: {fileID: 11400000, guid: a0f39e9aa8f8feb429e236854997a6a5, type: 2}
   deathSignal: {fileID: 11400000, guid: a1a02ec7bb43dac43b3e2afc2ffde8db, type: 2}
-  healthScript: {fileID: -6261991517059063911}
+  healthScript: {fileID: 0}
   myRigidBody: {fileID: 2026967169083000962}
   target: {fileID: 0}
   chaseRadius: 6
@@ -228,21 +228,6 @@ MonoBehaviour:
   projectile: {fileID: 7705571760168976934, guid: cb188e5cbcf557a41837a44f347fe99d, type: 3}
   fireRate: 2
   canFire: 1
---- !u!114 &-6261991517059063911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2026967169083000967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c1cb3fcc34dd754cbb2095477ca8f7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: {fileID: 11400000, guid: 063c0077f5f2dd042b333cc086128fba, type: 2}
-  currHealth: 0
-  death_count: {fileID: 11400000, guid: 152bd54895ed35a4ebf6f9e9bde70c9b, type: 2}
 --- !u!114 &-8148958535170726698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,3 +242,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   tag: Player
+--- !u!114 &4470094090446161623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026967169083000967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a735479debc347409ba24419d7c7941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: 063c0077f5f2dd042b333cc086128fba, type: 2}
+  currHealth: 0
+  death_count: {fileID: 11400000, guid: 152bd54895ed35a4ebf6f9e9bde70c9b, type: 2}
+  deathEffect: {fileID: 2334626126218842314, guid: 4748e5d7902196646b9e7802d6fe92f6, type: 3}
+  thisLoot: {fileID: 11400000, guid: a0f39e9aa8f8feb429e236854997a6a5, type: 2}

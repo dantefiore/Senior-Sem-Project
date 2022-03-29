@@ -157,6 +157,8 @@ MonoBehaviour:
   abilityNum: {fileID: 11400000, guid: 0e2875779f3eb9c4e84ebce9eaa34fe4, type: 2}
   currAbility: {fileID: 0}
   player: {fileID: 5197863620305848929}
+  start_cooldown: 0
+  cooldown: 0
   dash: {fileID: 11400000, guid: 87ad831dac4230a48bb5b3e0f59b499d, type: 2}
   arrow: {fileID: 11400000, guid: 951b354ae65e55848a0bebc053fccb25, type: 2}
   ice: {fileID: 11400000, guid: abf142c1c47941044bcdf6f728a111b9, type: 2}
@@ -185,7 +187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454691191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.025, y: 1.213, z: 0}
+  m_LocalPosition: {x: -0.025, y: 0.8544538, z: 0}
   m_LocalScale: {x: 0.4989, y: 0.4989, z: 0.4989}
   m_Children: []
   m_Father: {fileID: 5197863620305848934}
@@ -231,7 +233,7 @@ SpriteRenderer:
   m_SortingLayerID: 1974232619
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8387997009269029421, guid: 1b41c9bc6f8915a4daf5162c0d5033dd, type: 3}
+  m_Sprite: {fileID: 5955781087917997448, guid: 27a11bbd22538f94bb29ef8b092724f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -477,8 +479,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: {fileID: 11400000, guid: 53a1796d567cb654499282952cee2155, type: 2}
-  currHealth: 0
+  currHealth: 6
+  death_count: {fileID: 11400000, guid: 152bd54895ed35a4ebf6f9e9bde70c9b, type: 2}
   healthSignal: {fileID: 11400000, guid: c5f7c7425ea9bcd48af4aaf6f2c114ad, type: 2}
+  currScene: {fileID: 11400000, guid: 1486f7c79aa8c1141bd876370cf6b7f7, type: 2}
 --- !u!1 &5197863619805579295
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +499,9 @@ GameObject:
   - component: {fileID: 7994590554069716669}
   - component: {fileID: 1943510647}
   - component: {fileID: 1943510648}
+  - component: {fileID: 900066341}
+  - component: {fileID: 900066342}
+  - component: {fileID: 126152667}
   m_Layer: 28
   m_Name: Up Hit Box
   m_TagString: Magic
@@ -630,6 +637,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   tag: FortuneTellerGoblin
+--- !u!114 &900066341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619805579295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: Boss
+--- !u!114 &900066342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619805579295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: Boss
+--- !u!114 &126152667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619805579295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: breakable
 --- !u!1 &5197863619880622913
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +696,9 @@ GameObject:
   - component: {fileID: 7828240664085314439}
   - component: {fileID: 2112104929}
   - component: {fileID: 2112104930}
+  - component: {fileID: 985566423}
+  - component: {fileID: 985566424}
+  - component: {fileID: 2123754439}
   m_Layer: 28
   m_Name: Left Hit Box
   m_TagString: Magic
@@ -781,6 +834,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   tag: FortuneTellerGoblin
+--- !u!114 &985566423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619880622913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: Boss
+--- !u!114 &985566424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619880622913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: Boss
+--- !u!114 &2123754439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863619880622913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: breakable
 --- !u!1 &5197863620245371502
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +893,9 @@ GameObject:
   - component: {fileID: 4572790372685306609}
   - component: {fileID: 1490792787}
   - component: {fileID: 1490792788}
+  - component: {fileID: 1506473879}
+  - component: {fileID: 1506473880}
+  - component: {fileID: 282230570}
   m_Layer: 28
   m_Name: Down Hit Box
   m_TagString: Magic
@@ -932,6 +1031,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   tag: FortuneTellerGoblin
+--- !u!114 &1506473879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620245371502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: Boss
+--- !u!114 &1506473880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620245371502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: Boss
+--- !u!114 &282230570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620245371502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: breakable
 --- !u!1 &5197863620305848933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1406,9 @@ GameObject:
   - component: {fileID: 264489078610721307}
   - component: {fileID: 917545938}
   - component: {fileID: 917545939}
+  - component: {fileID: 796383951}
+  - component: {fileID: 796383952}
+  - component: {fileID: 1567675756}
   m_Layer: 28
   m_Name: Right Hit Box
   m_TagString: Magic
@@ -1399,6 +1544,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   tag: FortuneTellerGoblin
+--- !u!114 &796383951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620650198643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: Boss
+--- !u!114 &796383952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620650198643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: Boss
+--- !u!114 &1567675756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620650198643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170f1082b2f1404bac08ddd00ec5448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  tag: breakable
 --- !u!1 &6039474835400654926
 GameObject:
   m_ObjectHideFlags: 0

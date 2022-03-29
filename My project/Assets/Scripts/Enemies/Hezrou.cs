@@ -45,7 +45,7 @@ public class Hezrou : Goblin
         anim.SetBool("walking", true);
     }
 
-    public void ChangeGoal()
+    public virtual void ChangeGoal()
     {
         if(currPoint == path.Length - 1)
         {

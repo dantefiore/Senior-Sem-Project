@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3977879822975500182}
   - component: {fileID: 3977879822975500178}
   - component: {fileID: 3977879822975500181}
+  - component: {fileID: 2112879261588568892}
+  - component: {fileID: -7463081766312438730}
   m_Layer: 0
   m_Name: pot
   m_TagString: breakable
@@ -74,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: -10446925
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3487095783347953447, guid: 1b41c9bc6f8915a4daf5162c0d5033dd, type: 3}
+  m_Sprite: {fileID: 3487095783347953447, guid: 27a11bbd22538f94bb29ef8b092724f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.5625, y: 1.5625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,8 +104,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
+    oldSize: {x: 1.5625, y: 1.5625}
+    newSize: {x: 1.5625, y: 1.5625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -142,4 +144,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5504882f30045db479fb80e346698ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisLoot: {fileID: 11400000, guid: a0f39e9aa8f8feb429e236854997a6a5, type: 2}
+--- !u!61 &2112879261588568892
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3977879822975500137}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.045930147, y: -0.03330493}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5625, y: 1.5625}
+    newSize: {x: 1.5625, y: 1.5625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7863002, y: 0.84098196}
+  m_EdgeRadius: 0
+--- !u!114 &-7463081766312438730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3977879822975500137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3234a0c13737fb4897c45733a77a721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: 063c0077f5f2dd042b333cc086128fba, type: 2}
+  currHealth: 0
+  death_count: {fileID: 11400000, guid: 2cffd0b3fdbcc3c409731f4dfb08c404, type: 2}
+  anim: {fileID: 3977879822975500178}
   thisLoot: {fileID: 11400000, guid: a0f39e9aa8f8feb429e236854997a6a5, type: 2}
