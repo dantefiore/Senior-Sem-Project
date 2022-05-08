@@ -16,11 +16,11 @@ public class InventorySaver : MonoBehaviour
 
     private void OnDisable()
     {
-        SaveScriptables();
+        SaveScriptables();  //saves all the inventory information
     }
 
     public void ResetScriptables()
-    {
+    {   //resets the inventory info
         int i = 0;
         while (File.Exists(Application.persistentDataPath + string.Format("/{0}.inv", i)))
         {
@@ -33,6 +33,7 @@ public class InventorySaver : MonoBehaviour
     {
         ResetScriptables();
 
+        //formats and saves the inventory information
         for (int i = 0; i < playerInv.myInv.Count; i++)
         {
             FileStream file = File.Create(Application.persistentDataPath + string.Format("/{0}.inv", i));
@@ -48,6 +49,7 @@ public class InventorySaver : MonoBehaviour
         ResetScriptables();
         int i = 0;
 
+        //loads the file that holds the inventory information
         while(File.Exists(Application.persistentDataPath + string.Format("/{0}.inv", i)))
         {
             var temp = ScriptableObject.CreateInstance<InventoryItem>();

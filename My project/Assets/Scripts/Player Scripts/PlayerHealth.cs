@@ -16,12 +16,14 @@ public class PlayerHealth : GenericHealth
     public override void Damage(float amount)
     {
         base.Damage(amount);
-        maxHealth.RuntimeValue = currHealth;
+        maxHealth.RuntimeValue -= amount;
         healthSignal.Raise();
     }
 
     private void Update()
     {
+        currHealth = maxHealth.RuntimeValue;
+
         if(maxHealth.RuntimeValue <= 0)
         {
             currScene.RuntimeValue = SceneManager.GetActiveScene().buildIndex;

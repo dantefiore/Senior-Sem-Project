@@ -4,28 +4,29 @@ using UnityEngine;
 
 public class walkingNPC : Sign
 {
-    private Vector3 dirVector;
-    private Transform myTranform;
-    public float speed;
+    private Vector3 dirVector;  //the direction the npc is moving
+    private Transform myTranform;   //the position of the npc
+    public float speed; //the speed of the npc
     private float setSpeed;
-    private Rigidbody2D myRigidBody;
-    private Animator anim;
-    public Collider2D bounds;
-    private bool canMove = true;
+    private Rigidbody2D myRigidBody; //rigid body of the npc
+    private Animator anim;  //animator of the npc
+    public Collider2D bounds;   //the bounds the npc walks in
+    private bool canMove = true;    //the bool deciding if the npc can move
 
-    public float minMoveTime;
-    public float maxMoveTime;
-    private float moveTimeSeconds;
+    public float minMoveTime;   //the minimum number of seconds the npc changes direction
+    public float maxMoveTime;   //the maximum number of seconds the npc changes direction
+    private float moveTimeSeconds;  //the amount of time the npc will change the direction
 
-    public float minWaitTime;
-    public float maxWaitTime;
-    private float waitTimeSecs;
+    public float minWaitTime;   //the minimum amount of time the npc will wait before it moves
+    public float maxWaitTime;   //the maximum amount of time the npc will wait before it moves
+    private float waitTimeSecs; //how long the npc will wait
 
-    public bool isMove = false;
+    public bool isMove = false; //if the noc is moving
 
     // Start is called before the first frame update
     void Start()
     {
+        //chooses a random number between the ranges
         moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
         waitTimeSecs = Random.Range(minWaitTime, maxWaitTime);
 
@@ -43,6 +44,7 @@ public class walkingNPC : Sign
 
         if (canMove)
         {
+            //decreases the time to move, and when it runs out it waits
             moveTimeSeconds -= Time.deltaTime;
             if(moveTimeSeconds <= 0)
             {
@@ -57,6 +59,7 @@ public class walkingNPC : Sign
         }
         else
         {
+            //decreases the wait time, and when it runs out it moves again
             waitTimeSecs -= Time.deltaTime;
             if(waitTimeSecs <= 0)
             {
@@ -72,6 +75,7 @@ public class walkingNPC : Sign
 
     private void ChooseDiffDir()
     {
+        //chooses a random direction and moves that way
         Vector3 temp = dirVector;
         ChangeDirection();
 
@@ -85,6 +89,7 @@ public class walkingNPC : Sign
 
     private void Move()
     {
+        //moves the npc
         Vector3 temp = myTranform.position + dirVector * speed * Time.deltaTime;
         if (bounds.bounds.Contains(temp))
         {
@@ -98,6 +103,8 @@ public class walkingNPC : Sign
     {
         int direction = Random.Range(0, 4);
 
+        //decides the direction of the npc depending
+        //on the random number chosen
         switch (direction) {
             case 0:
                 dirVector = Vector3.right;
@@ -120,6 +127,7 @@ public class walkingNPC : Sign
 
     void UpdateAnim()
     {
+        //updates the animation depending on the direction
         anim.SetFloat("moveX", dirVector.x);
         anim.SetFloat("moveY", dirVector.y);
         anim.SetBool("canMove", isMove);
@@ -132,6 +140,7 @@ public class walkingNPC : Sign
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
+        //if the player is in the talk range, the npc stops moving
         if (other.CompareTag("npc") && !other.isTrigger)
         {
             context.Raise();
@@ -144,6 +153,7 @@ public class walkingNPC : Sign
 
     public override void OnTriggerExit2D(Collider2D other)
     {
+        //if the player exits the talk area, the npc moves again
         if (other.CompareTag("npc") && !other.isTrigger)
         {
             context.Raise();

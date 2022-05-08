@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ManaReaction : MonoBehaviour
 {
-    public float playerMana;
-    public SignalSender manaSignal;
+    public float playerMana;    //the players mana
+    public SignalSender manaSignal; //the mana signal
 
     public void UseManaPotion(int increaseAmt)
     {
+        //increases the player's mana when the item is used
         playerMana += increaseAmt;
         manaSignal.Raise();
     }

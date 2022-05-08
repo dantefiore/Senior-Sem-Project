@@ -18,6 +18,11 @@ public class HeartManager : MonoBehaviour
         InitHearts();
     }
 
+    private void Update()
+    {
+        UpdateHearts();
+    }
+
     public void InitHearts()
     {
         for(int i=0; i < heartContainers.RuntimeValue; i++)

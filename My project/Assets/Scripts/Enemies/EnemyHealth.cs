@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class EnemyHealth : GenericHealth
 {
-    public GameObject deathEffect;
-    public LootTable thisLoot;
+    public GameObject deathEffect;  //the animation that plays when the enemy dies
+    public LootTable thisLoot;  //the loot that spawns when the enemy is defeated
 
     public override void Update()
     {
+        //cheacks if the health is below or equal to 0
         if (currHealth <= 0)
         {
-            DeathEffect();
-            makeLoot();
-            death_count.RuntimeValue += 1;
-            this.gameObject.SetActive(false);
+            DeathEffect();  //plays the death effect
+            makeLoot(); //spawns loot
+            death_count.RuntimeValue += 1;  //increases the death counter
+            this.gameObject.SetActive(false);   //deactivates the enemy
         }
     }
 
     public void DeathEffect()
     {
+        //plays the death animation
         if (deathEffect != null)
         {
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
@@ -29,6 +31,7 @@ public class EnemyHealth : GenericHealth
 
     public void makeLoot()
     {
+        //chooses a random loot drop and spawns it
         if (thisLoot != null)
         {
             PowerUp curr = thisLoot.LootDrop();

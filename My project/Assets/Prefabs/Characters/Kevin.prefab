@@ -157,7 +157,7 @@ MonoBehaviour:
   abilityNum: {fileID: 11400000, guid: 0e2875779f3eb9c4e84ebce9eaa34fe4, type: 2}
   currAbility: {fileID: 0}
   player: {fileID: 5197863620305848929}
-  start_cooldown: 0
+  start_cooldown: 600
   cooldown: 0
   dash: {fileID: 11400000, guid: 87ad831dac4230a48bb5b3e0f59b499d, type: 2}
   arrow: {fileID: 11400000, guid: 951b354ae65e55848a0bebc053fccb25, type: 2}
@@ -232,7 +232,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1974232619
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 101
   m_Sprite: {fileID: 5955781087917997448, guid: 27a11bbd22538f94bb29ef8b092724f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -896,6 +896,7 @@ GameObject:
   - component: {fileID: 1506473879}
   - component: {fileID: 1506473880}
   - component: {fileID: 282230570}
+  - component: {fileID: 1699711250}
   m_Layer: 28
   m_Name: Down Hit Box
   m_TagString: Magic
@@ -1074,6 +1075,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   tag: breakable
+--- !u!114 &1699711250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197863620245371502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834c78d7ec9f3164ebf40c226cc14942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.3
+  knockTag: breakable
 --- !u!1 &5197863620305848933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0fc723f56b05d4489e6443b5871385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 35
+  speed: 7
   myRigidBody: {fileID: 0}
   anim: {fileID: 0}
   currentState: 0

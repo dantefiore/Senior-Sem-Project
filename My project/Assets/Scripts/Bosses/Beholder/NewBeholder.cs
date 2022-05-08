@@ -6,44 +6,41 @@ public class NewBeholder : TurretEnemy
 {
     [SerializeField] private float speed;
 
-    [Header("I Frames")]
-    public Color flashColor; //the color the player flashes when hit
-    public Color regColor;  //the characters normal colors
-    public float flashDur; //how long the flashing lasts
-    public int numOfFlash;  //the number of flashes
-    public Collider2D triggerCollider; //the players hurt box
-    public SpriteRenderer mySprite; //the characters sprite
-
-    // Update is called once per frame
-    void LateUpdate()
+    public override void CheckDistance()
     {
-        Vector3 vectorToTarget = target.position - transform.position;
-        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
-        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
-    }
 
-    public override IEnumerator KnockCo(Rigidbody2D myRigidBody, float knockTime)
-    {
-        if (myRigidBody != null)
+        //if the player is in attacking range
+        if (Vector3.Distance(target.position, transform.position) <= chaseRadius
+            && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
-            StartCoroutine(FlashCo());
-        }
+            //finds the direction and angel to the target, then changes the rotaion to face the target
+            Vector3 vectorToTarget = target.position - transform.position;
+            float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg);
+            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 10);
 
-        return base.KnockCo(myRigidBody, knockTime);
-    }
+            //if the enemy is in a state to fire
+            if (currState == EnemyState.idle || currState == EnemyState.walk && currState != EnemyState.stagger)
+            {
+                //and it is ready to fire
+                if (canFire)
+                {
+                    //spawn a projectile and moves it towards the target
+                    Vector3 tempVector = target.transform.position - transform.position;
+                    GameObject curr = Instantiate(projectile, transform.position, Quaternion.identity);
+                    curr.GetComponent<Projectile>().Launch(tempVector);
 
-    private IEnumerator FlashCo()
-    {
-        //plays the flashing animations
-        for (int i = 0; i < numOfFlash; i++)
+                    //change the bool so it can't fire
+                    canFire = false;
+
+                    ChangeState(EnemyState.walk);
+                    anim.SetBool("walking", true);
+                }
+            }
+        }   //if the player is out of the attack range
+        else if ((Vector3.Distance(target.position, transform.position) > chaseRadius))
         {
-            mySprite.color = flashColor;
-            yield return new WaitForSeconds(flashDur);
-            mySprite.color = regColor;
-            yield return new WaitForSeconds(flashDur);
+            anim.SetBool("walking", false);
         }
-
-        //mySprite.color = regColor;
     }
 }

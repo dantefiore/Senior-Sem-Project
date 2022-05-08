@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 7888710700310338926}
   - component: {fileID: 6021244154414133029}
   - component: {fileID: 3360054160085683875}
-  - component: {fileID: 6941195147627460189}
   - component: {fileID: 6233507009583009788}
   - component: {fileID: 265446390940785952}
   - component: {fileID: 1423297788375964972}
   - component: {fileID: 6498933888365436502}
+  - component: {fileID: 7489558789742643585}
   m_Layer: 8
   m_Name: Spear
   m_TagString: Untagged
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 1261aab3b6c2c684cbf547ec3255e9f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f7695a851e615147ba9ff9bcf1dd260, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,8 +105,8 @@ BoxCollider2D:
   m_Offset: {x: -0.003632769, y: 0.026545525}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9085715, y: 1.9085715}
+    pivot: {x: 0.4251987, y: 0.521817}
+    oldSize: {x: 3.3333333, y: 3.3333333}
     newSize: {x: 1.9085715, y: 1.9085715}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -135,26 +135,7 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
---- !u!95 &6941195147627460189
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7705571760168976934}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6260b025f6198247a5fb785d9dd0803, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_Constraints: 0
 --- !u!114 &6233507009583009788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,3 +193,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.7
+--- !u!95 &7489558789742643585
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7705571760168976934}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2deaa25c31cf5a348a471dea9bf8c754, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

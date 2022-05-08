@@ -42,6 +42,12 @@ public class DungeonEnemyRoom : DungeonRoom
                 ChangeActivation(pots[i], true);
             }
 
+            for(int i=0; i<enemies.Length; i++)
+            {
+                enemies[i].maxHealth.RuntimeValue = enemies[i].maxHealth.initialVal;
+                enemies[i].health = enemies[i].maxHealth.initialVal;
+            }
+
             death_count.RuntimeValue = 0;
             CloseDoors();
         }

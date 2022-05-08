@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8906911566104825052
@@ -146,3 +146,4 @@ MonoBehaviour:
   playerHealth: {fileID: 11400000, guid: 53a1796d567cb654499282952cee2155, type: 2}
   amountToIncrease: 2
   currHeartContainers: {fileID: 11400000, guid: 46feb736b36f18e4184717217b8d5312, type: 2}
+  manager: {fileID: 2788696005297471205, guid: bc8dd97fb9131474c8b099173fa821fa, type: 3}

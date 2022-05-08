@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class GameSaveManager : MonoBehaviour
 {
-    public static GameSaveManager manager;
+    public static GameSaveManager manager;  //the game save manager
+
+    //the list of scriptable objects
     public List<ScriptableObject> objects = new List<ScriptableObject>();
 
-    public FloatValue PlayerHealth;
-    public Inventory inv;
-    public List<BoolVal> chests = new List<BoolVal>();
+    public FloatValue PlayerHealth; //the player's health
+    public Inventory inv;   //the player's inventory
+    public List<BoolVal> chests = new List<BoolVal>();  //the lists of bool vals
 
    // private void Awake()
     //{
@@ -23,6 +25,7 @@ public class GameSaveManager : MonoBehaviour
   //      DontDestroyOnLoad(this);
    // }
 
+    //resets all scriptable objects
     public void ResetScriptables()
     {
         for(int i =0; i < objects.Count; i++)
@@ -34,28 +37,7 @@ public class GameSaveManager : MonoBehaviour
         }
     }
 
-    public void ClearSpells()
-    {
-        inv.items.Clear();
-        inv.numKeys = 0;
-        inv.coins = 0;
-    }
-
-    public void FillMagic()
-    {
-        inv.currMagic = inv.maxMagic;
-    }
-
-    public void FullHeal()
-    {
-        PlayerHealth.RuntimeValue = PlayerHealth.initialVal;
-    }
-
-    public void AddKeys()
-    {
-        inv.numKeys += 10;
-    }
-
+    //closes all chests
     public void CloseChests()
     {
         for(int i =0; i < chests.Count; i++)
@@ -64,11 +46,13 @@ public class GameSaveManager : MonoBehaviour
         }
     }
 
+    //load all scriptables
     private void OnEnable()
     {
         LoadScriptables();
     }
 
+    //save all scriptables
     private void OnDisable()
     {
         SaveScriptables();
@@ -76,6 +60,7 @@ public class GameSaveManager : MonoBehaviour
 
     public void SaveScriptables()
     {
+        //creates a file and saves all scriptable objects
         for(int i =0; i < objects.Count; i++)
         {
             FileStream file = File.Create(Application.persistentDataPath + string.Format("/{0}.dat", i));
@@ -88,6 +73,7 @@ public class GameSaveManager : MonoBehaviour
 
     public void LoadScriptables()
     {
+        //loads all scriptable objects
         for (int i = 0; i < objects.Count; i++)
         {
             if(File.Exists(Application.persistentDataPath + string.Format("/{0}.dat", i)))

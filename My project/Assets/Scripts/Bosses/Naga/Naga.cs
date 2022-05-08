@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Naga : Hezrou
 {
-    [SerializeField] private float speed;
-    [SerializeField] private Transform facingTarget;
+    [SerializeField] private float speed;   //the speed of the enemy
+    [SerializeField] private Transform facingTarget; //the direction the enemy faces
 
     private void LateUpdate()
     {
-        facingTarget = currGoal;
-        Vector3 vectorToTarget = currGoal.position - transform.position;
-        float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) + 90;
+        facingTarget = currGoal;    //faces the enemy towards its current goal
+        Vector3 vectorToTarget = currGoal.position - transform.position;  //moves the enemy to the current goal
+
+        //changes the rotation to look at the player
+        float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) + 90;  
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
     }
 
+    //changes the target goal to the next one
     public override void ChangeGoal()
     {
         if (currPoint == path.Length - 1)

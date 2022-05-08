@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DeathCount
   m_EditorClassIdentifier: 
   initialVal: 0
-  RuntimeValue: 3
+  RuntimeValue: 0

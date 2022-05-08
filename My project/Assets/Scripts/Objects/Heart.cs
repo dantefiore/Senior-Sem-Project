@@ -7,10 +7,11 @@ public class Heart : PowerUp
     public FloatValue playerHealth;
     public float amountToIncrease;
     public FloatValue currHeartContainers;
+    [SerializeField] private HeartManager manager;
 
     private void Start()
     {
-        playerHealth.RuntimeValue = playerHealth.initialVal;
+        //playerHealth.RuntimeValue = playerHealth.initialVal;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -23,7 +24,10 @@ public class Heart : PowerUp
             {
                 playerHealth.RuntimeValue = currHeartContainers.RuntimeValue * 2f;
             }
-            powerUpSignal.Raise();
+            //powerUpSignal.Raise();
+
+            manager.UpdateHearts();
+
             Destroy(this.gameObject);
         }
     }

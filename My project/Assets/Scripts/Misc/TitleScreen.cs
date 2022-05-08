@@ -6,13 +6,15 @@ using System.IO;
 
 public class TitleScreen : MonoBehaviour
 {
+    //liost of scriptable objects
     public List<ScriptableObject> objects = new List<ScriptableObject>();
-    public List<BoolVal> chests = new List<BoolVal>();
-    public FloatValue playerHealth;
-    public PlayerMovement playerMovement;
-    public Inventory inv;
-    public FloatValue heartContainers;
+    public List<BoolVal> chests = new List<BoolVal>();  //lost of ool vals
+    public FloatValue playerHealth; //player's health
+    public PlayerMovement playerMovement;   //the plsyer movement script
+    public Inventory inv;   //the player's inventory
+    public FloatValue heartContainers;  //the health ui
 
+    //resets everything for the new game
     public void newGame()
     {
         inv.currMagic = inv.maxMagic;
@@ -37,24 +39,33 @@ public class TitleScreen : MonoBehaviour
 
         SceneManager.LoadScene("Opening Cutscene");
     }
-
+    
     public void loadGame()
-    {
+    {   //loads the saved game file
         SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
     }
 
     public void toTitle()
     {
+        //sends to the title screen
         SceneManager.LoadScene("Title Screen");
     }
 
     public void howToPlay()
     {
+        //sends to the how to play screen
         SceneManager.LoadScene("How To Play Screen");
+    }
+
+    public void credits()
+    {
+        //sends to the credits screen
+        SceneManager.LoadScene("Credits");
     }
 
     public void QuitToDesktop()
     {
+        //closes the game
         Application.Quit();
     }
 }
