@@ -166,6 +166,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinalCutsceneEntrance
       objectReference: {fileID: 0}
+    - target: {fileID: 2359119181542161193, guid: c9710e23eea804c4198331ff828658c4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8786588
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359119181542161193, guid: c9710e23eea804c4198331ff828658c4, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.21868539
+      objectReference: {fileID: 0}
     - target: {fileID: 5851081821469422886, guid: c9710e23eea804c4198331ff828658c4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -29545,6 +29553,14 @@ PrefabInstance:
     - target: {fileID: 2302996150902287280, guid: c9710e23eea804c4198331ff828658c4, type: 3}
       propertyPath: m_Name
       value: FinalDgnEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359119181542161193, guid: c9710e23eea804c4198331ff828658c4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8347659
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359119181542161193, guid: c9710e23eea804c4198331ff828658c4, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.19673896
       objectReference: {fileID: 0}
     - target: {fileID: 5851081821469422886, guid: c9710e23eea804c4198331ff828658c4, type: 3}
       propertyPath: m_RootOrder
