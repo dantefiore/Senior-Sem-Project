@@ -1412,13 +1412,13 @@ MonoBehaviour:
   dungeon1: {fileID: 11400000, guid: 8f1d396d4c4121d408b7f936a2f8f2d1, type: 2}
   dungeon2: {fileID: 11400000, guid: 6b8706fd8aef6364eb829b739d2687c2, type: 2}
   dungeon3: {fileID: 11400000, guid: 6b76853d0a8edbc4087447fa1376397f, type: 2}
-  dungeon4: {fileID: 11400000, guid: f56f3ebe280eeb84c98035eba11614d6, type: 2}
+  dungeon4: {fileID: 11400000, guid: 3cb22ab6b25015649a92490aaeef6384, type: 2}
   storyPoints:
   - {fileID: 11400000, guid: 984a778c64ab07e48b35bf2781b293c7, type: 2}
   - {fileID: 11400000, guid: 8f1d396d4c4121d408b7f936a2f8f2d1, type: 2}
   - {fileID: 11400000, guid: 6b8706fd8aef6364eb829b739d2687c2, type: 2}
   - {fileID: 11400000, guid: 6b76853d0a8edbc4087447fa1376397f, type: 2}
-  - {fileID: 11400000, guid: f56f3ebe280eeb84c98035eba11614d6, type: 2}
+  - {fileID: 11400000, guid: 3cb22ab6b25015649a92490aaeef6384, type: 2}
 --- !u!212 &1318224187
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1478,7 +1478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318224183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 2.73, z: 0}
+  m_LocalPosition: {x: 0, y: 2.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

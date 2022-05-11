@@ -15,6 +15,7 @@ public class GenericProjectile : MonoBehaviour
 
     public void SetUp(Vector2 movementDir)
     {
+        //sets the velocity of the projectile
         myRigidBody.velocity = movementDir.normalized * speed;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : PowerUp
 {
-    public Inventory playerInv;
+    public Inventory playerInv; //the player's inventory
 
     // Start is called before the first frame update
     void Start()
@@ -12,14 +12,10 @@ public class Coin : PowerUp
         powerUpSignal.Raise();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnTriggerEnter2D(Collider2D other)
     {
+        //if the player touches the coin, the coin is added to
+        //the player's inventory, and destroys the object
         if (other.CompareTag("Player") && other.isTrigger)
         {
             playerInv.coins += 1;

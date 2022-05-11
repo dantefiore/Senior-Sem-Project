@@ -4,21 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Chest : Interactable
-{
-    public Item contents;
-    public Inventory inv;
-    public bool isOpened;
-    public BoolVal storeState;
-    public SignalSender raiseItem;
-    public GameObject dialogBox;
-    public Text dialogText;
-    private Animator anim;
-    public PlayerInventory playerInv;
-    public InventoryItem thisItem;
+{ 
+    public Item contents; //contents of the chest
+    public Inventory inv;   //the player's inventory
+    public bool isOpened;   //if the chest is opened
+    public BoolVal storeState;  //if the chest was opened already
+    public SignalSender raiseItem;  //the signal sender for the item
+    public GameObject dialogBox;    //the player's dialog box
+    public Text dialogText; //the text of the dialog box
+    private Animator anim;  //the animator of the chest
+    public PlayerInventory playerInv;   //the player's inventory
+    public InventoryItem thisItem;  //the item in the player's inventory
 
     // Start is called before the first frame update
     void Start()
     {
+        //the chest is opened or closed
+        //depending on the store state
         anim = GetComponent<Animator>();
         isOpened = storeState.RuntimeValue;
         if (isOpened)
@@ -32,6 +34,7 @@ public class Chest : Interactable
     // Update is called once per frame
     void Update()
     {
+        //if the player is in range to open the chest
         if (Input.GetButtonDown("Submit") && playerInRange)
         {
             if (!isOpened)
@@ -59,6 +62,7 @@ public class Chest : Interactable
         inv.AddItem(contents);
         inv.currItem = contents;
 
+        //adds the item to the player's inventory
         if (playerInv && thisItem)
         {
             if (playerInv.myInv.Contains(thisItem))
@@ -97,6 +101,7 @@ public class Chest : Interactable
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
+        //raises the bubble aboves the players head if they are in range to open
         if (other.CompareTag("Player") && !other.isTrigger && !isOpened)
         {
             context.Raise();
@@ -105,6 +110,7 @@ public class Chest : Interactable
     }
     public override void OnTriggerExit2D(Collider2D other)
     {
+        //closes the bubble aboves the players head if they are not in range to open
         if (other.CompareTag("Player") && !other.isTrigger && !isOpened)
         {
             context.Raise();

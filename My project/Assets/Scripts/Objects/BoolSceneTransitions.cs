@@ -9,6 +9,8 @@ public class BoolSceneTransitions : SceneTransition
     // Start is called before the first frame update
     void Start()
     {
+        //if the story point is not completed, the player cannot go to that scene,
+        //if it is, then the scene is available to go to
         if (storyPoint.RuntimeValue)
             this.gameObject.SetActive(true);
         else if (!storyPoint.RuntimeValue)

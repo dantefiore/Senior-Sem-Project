@@ -7,13 +7,13 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Items")]
 public class InventoryItem : ScriptableObject
 {
-    public string itemName;
-    public string itemDesc;
-    public Sprite itemImg;
-    public int numHeld;
-    public bool usable;
-    public bool unique;
-    public bool ability;
+    public string itemName; //the name of the item
+    public string itemDesc; //the description of the item
+    public Sprite itemImg;  //the image of the item
+    public int numHeld; //the number of that item the player has
+    public bool usable; //if the item is usable
+    public bool unique; //if the player can have multiple
+    public bool ability;    //if the item is an ability
     public UnityEvent evt;
 
     public void Use()
@@ -23,6 +23,8 @@ public class InventoryItem : ScriptableObject
 
     public void DecreaseAmount(int decreaseAmt)
     {
+        //decreases the amount the player has,
+        //and won't let it go below that amount
         numHeld -= decreaseAmt;
         if(numHeld < 0)
         {
